@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .rows {
+            display : flex ;
+            flex-direction:row;
+        }
+    </style>
+    <title>LIST OF LOVE RESULT</title>
+</head>
+<body>
+    <table border="1">
+        <td>First Person</td>
+        <td>&#10084;&#65039;</td>
+        <td>Second Person</td>
+        <td>Love Score</td>
+        <td>Compatible?</td>
+        <tr data-th-each="loveResult : ${allLoveResults}">
+            <td data-th-text="${loveResult.fname}"></td>
+            <td>&#10084;&#65039;</td>
+            <td data-th-text="${loveResult.sname}"></td>
+            <td data-th-text="${loveResult.percentage}"></td>
+            <td data-th-text="${loveResult.result}"></td>
+        </tr>
+    </table>
+    <br>
+    <div class="rows">
+    <form 
+        action="/love/list"
+            method="post">
+    <button type="submit">Clear</button>
+        </form>
+    <form
+        action="/"
+            method="get">
+    <button type="submit">New</button>    
+    </form>
+</div>
+</body>
+</html>
